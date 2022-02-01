@@ -6,6 +6,8 @@ const counterReducer = (state = {counter: 0}, action) => {
 			return {counter: state.counter + 1};
 		case "decrement":
 			return {counter: state.counter - 1};
+		case "increase":
+			return {counter: state.counter + action.number};
 
 		default:
 			return state;
@@ -16,10 +18,10 @@ const store = createStore(counterReducer);
 
 export default store;
 
-store.subscribe(() => {
-	const latestState = store.getState();
-	console.log(latestState);
-});
+// store.subscribe(() => {
+// 	const latestState = store.getState();
+// 	console.log(latestState);
+// });
 
-store.dispatch({type: "increment"});
-store.dispatch({type: "decrement"});
+// store.dispatch({type: "increment"});
+// store.dispatch({type: "decrement"});
