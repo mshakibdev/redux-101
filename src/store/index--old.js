@@ -1,3 +1,5 @@
+// !! with redux only
+
 import {createStore} from "redux";
 
 const initialState = {counter: 0, showCounter: true};
